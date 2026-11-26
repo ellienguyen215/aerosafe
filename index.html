@@ -391,5 +391,20 @@
     © 2026 AEROSAFE. All rights reserved.
   </footer>
 
+  <script>
+    // Always open the page at the top, not where the browser last left off
+    // or at a #section from an old link.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    function goTop() {
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      document.documentElement.style.scrollBehavior = "";
+    }
+    goTop();
+    window.addEventListener("load", goTop);
+    window.addEventListener("pageshow", function (e) { if (e.persisted) goTop(); });
+  </script>
+
 </body>
 </html>

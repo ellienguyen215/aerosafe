@@ -1,258 +1,334 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AEROSAFE | Travel Smarter. Carry Safer.</title>
+  <meta name="description" content="AEROSAFE: a compact protective sleeve for MagSafe portable chargers. $39.99.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root {
+      --navy: #1a4b5f;
+      --navy-deep: #123747;
+      --sky: #6aa9bf;
+      --sky-soft: #e6f1f5;
+      --bolt: #fcc419;
+      --bolt-deep: #e8ac00;
+      --ink: #15232b;
+      --muted: #5b6b73;
+      --paper: #fbfaf7;
+      --line: #dfe7ea;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fafaf8;
-      color: #202124;
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
     }
 
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--navy); }
+
+    img { max-width: 100%; display: block; }
+
+    .wrap { width: min(1120px, 88%); margin: 0 auto; }
+
+    /* NAV */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 8%;
-      background: white;
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 2px;
+    nav .wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0;
     }
-
-    .logo span {
-      color: #ed873e;
-    }
-
-    nav a {
+    .brand {
+      display: flex; align-items: center; gap: 10px;
       text-decoration: none;
-      color: #333;
-      margin-left: 25px;
-      font-size: 14px;
+      font-weight: 700; letter-spacing: 3px; font-size: 18px;
+      color: var(--navy);
     }
+    .brand img { width: 38px; height: auto; }
+    .brand span { color: var(--sky); }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      margin-left: 26px; font-size: 14px; font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links .nav-buy {
+      background: var(--navy); color: #fff;
+      padding: 9px 16px; border-radius: 999px;
+    }
+    .nav-links .nav-buy:hover { color: #fff; background: var(--navy-deep); }
 
+    /* HERO */
     .hero {
-      min-height: 620px;
-      padding: 90px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      background: #f1f0ec;
+      background:
+        radial-gradient(circle at 85% 30%, var(--sky-soft) 0, transparent 55%),
+        var(--paper);
+      padding: 80px 0 90px;
     }
-
-    .hero-text {
-      max-width: 520px;
+    .hero .wrap {
+      display: grid; grid-template-columns: 1.05fr 1fr;
+      gap: 50px; align-items: center;
     }
-
     .eyebrow {
-      color: #e47c35;
-      font-weight: bold;
-      letter-spacing: 3px;
-      font-size: 12px;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--navy); background: var(--sky-soft);
+      padding: 6px 12px; border-radius: 999px;
+      font-weight: 600; letter-spacing: 1.5px; font-size: 11px;
+      text-transform: uppercase;
     }
-
-    h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.05;
-      margin: 20px 0;
+    .eyebrow::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--bolt);
     }
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.04; margin: 22px 0 20px;
+    }
+    .hero p.lead { color: var(--muted); font-size: 18px; max-width: 480px; }
 
-    .hero p {
-      color: #666;
-      font-size: 17px;
-      line-height: 1.7;
+    .price-row {
+      display: flex; align-items: center; gap: 22px;
+      margin-top: 34px; flex-wrap: wrap;
+    }
+    .price {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 40px; font-weight: 700; color: var(--navy);
+    }
+    .price small {
+      display: block; font-family: "Inter", sans-serif;
+      font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.5px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 27px;
-      background: #ed873e;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
+      padding: 15px 28px;
+      background: var(--bolt); color: var(--ink);
+      text-decoration: none; border-radius: 999px;
+      font-weight: 700; font-size: 15px;
+      box-shadow: 0 6px 0 var(--bolt-deep);
+      transition: transform .15s, box-shadow .15s;
     }
+    .button:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--bolt-deep); }
 
-    .hero img {
-      width: 45%;
-      max-width: 500px;
-      border-radius: 12px;
-      object-fit: contain;
+    .hero-visual {
+      position: relative; background: #fff; border-radius: 28px;
+      padding: 30px; border: 1px solid var(--line);
+      box-shadow: 0 30px 60px rgba(26, 75, 95, 0.12);
     }
-
-    section {
-      padding: 85px 10%;
+    .badge {
+      position: absolute; left: -18px; bottom: 8%;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 14px; padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 600; color: var(--navy);
+      box-shadow: 0 10px 30px rgba(26, 75, 95, 0.12);
     }
+    .badge img { width: 30px; }
 
-    .section-title {
-      font-size: 36px;
-      margin-bottom: 20px;
+    /* SECTIONS */
+    section { padding: 90px 0; }
+    .section-title { font-size: clamp(30px, 4vw, 42px); margin: 18px 0 16px; line-height: 1.15; }
+    .description { max-width: 640px; color: var(--muted); font-size: 17px; }
+
+    .about .wrap {
+      display: grid; grid-template-columns: 220px 1fr; gap: 60px; align-items: center;
     }
+    .about .shield { width: 200px; margin: 0 auto; }
 
-    .description {
-      max-width: 700px;
-      color: #666;
-      line-height: 1.8;
-    }
-
+    .design { background: var(--sky-soft); }
     .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 40px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 44px;
     }
-
     .feature {
-      background: white;
-      padding: 30px;
-      border: 1px solid #eee;
-      border-radius: 8px;
+      background: #fff; padding: 30px;
+      border-radius: 18px; border: 1px solid var(--line);
     }
+    .feature .num {
+      display: inline-grid; place-items: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy); color: var(--bolt);
+      font-weight: 700; font-size: 14px; margin-bottom: 18px;
+    }
+    .feature h3 { font-size: 22px; margin-bottom: 10px; }
+    .feature p { color: var(--muted); font-size: 15px; }
 
-    .feature h3 {
-      margin-bottom: 15px;
+    /* BUY */
+    .buy .card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 24px; overflow: hidden;
     }
+    .buy .card-img {
+      background: #fff; display: grid; place-items: center; padding: 40px;
+      border-right: 1px solid var(--line);
+    }
+    .buy .card-body { padding: 50px; }
+    .buy .card-body h2 { font-size: 36px; margin: 14px 0 6px; }
+    .buy .card-body .price { font-size: 46px; margin: 10px 0 20px; }
+    .buy ul { list-style: none; margin-bottom: 30px; }
+    .buy li {
+      padding: 10px 0 10px 30px; border-bottom: 1px solid var(--line);
+      position: relative; color: var(--ink); font-size: 15px;
+    }
+    .buy li::before {
+      content: "⚡"; position: absolute; left: 0; top: 9px; font-size: 14px;
+    }
+    .note { font-size: 12px; color: var(--muted); margin-top: 18px; }
 
-    .feature p {
-      color: #666;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .mission {
-      background: #202124;
-      color: white;
-      text-align: center;
-    }
-
-    .mission p {
-      color: #ccc;
-      max-width: 650px;
-      margin: 20px auto;
-      line-height: 1.8;
-    }
+    /* MISSION */
+    .mission { background: var(--navy); color: #fff; text-align: center; }
+    .mission h2 { color: #fff; }
+    .mission .eyebrow { background: rgba(255,255,255,0.1); color: #fff; }
+    .mission p { color: #c9dde4; max-width: 620px; margin: 0 auto; font-size: 17px; }
 
     footer {
-      padding: 30px;
-      text-align: center;
-      color: #888;
-      font-size: 12px;
+      padding: 34px 0; text-align: center;
+      color: var(--muted); font-size: 13px;
     }
+    footer img { width: 34px; margin: 0 auto 10px; }
 
-    @media (max-width: 750px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero img {
-        width: 100%;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 12px;
-      }
+    @media (max-width: 860px) {
+      .hero .wrap, .about .wrap, .buy .card { grid-template-columns: 1fr; }
+      .hero { padding-top: 50px; }
+      .features { grid-template-columns: 1fr; }
+      .about .shield { width: 140px; }
+      .buy .card-body { padding: 32px; }
+      .nav-links a:not(.nav-buy) { display: none; }
+      .badge { left: 8px; }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <nav>
-    <div class="logo">AERO<span>SAFE</span></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#design">Design</a>
-      <a href="#mission">Our Mission</a>
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="AEROSAFE logo">
+        AERO<span>SAFE</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#design">Design</a>
+        <a href="#mission">Our Mission</a>
+        <a class="nav-buy" href="#buy">$39.99</a>
+      </div>
     </div>
   </nav>
 
-  <div class="hero">
-    <div class="hero-text">
-      <div class="eyebrow">A NEW APPROACH TO BATTERY STORAGE</div>
-      <h1>Travel smarter. Carry safer.</h1>
-      <p>
-        Introducing AEROSAFE: a proposed compact protective sleeve
-        designed for MagSafe portable chargers, with travel convenience
-        and battery safety in mind.
-      </p>
-      <a class="button" href="#about">DISCOVER AEROSAFE</a>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="eyebrow">A new approach to battery storage</div>
+        <h1>Travel smarter.<br>Carry safer.</h1>
+        <p class="lead">
+          AEROSAFE is a compact protective sleeve designed for MagSafe
+          portable chargers, made with travel convenience and battery
+          safety in mind.
+        </p>
+        <div class="price-row">
+          <div class="price">$39.99<small>One sleeve · fits MagSafe chargers</small></div>
+          <a class="button" href="#buy">Get AEROSAFE</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="product" src="aerosafe-product.jpg" alt="White AEROSAFE zip sleeve holding a MagSafe portable charger">
+        <div class="badge"><img src="logo.png" alt="">Built for travel</div>
+      </div>
     </div>
+  </header>
 
-    <!-- Add your product concept image to the repository
-         and name it aerosafe-concept.png -->
-    <img src="aerosafe-concept.png" alt="AEROSAFE product concept">
-  </div>
-
-  <section id="about">
-    <div class="eyebrow">THE IDEA</div>
-    <h2 class="section-title">Small design. Important purpose.</h2>
-    <p class="description">
-      Portable chargers have become everyday travel essentials.
-      However, lithium-ion batteries can pose fire risks if damaged
-      or improperly handled. AEROSAFE is being developed to explore
-      a more thoughtful way to carry portable batteries.
-    </p>
+  <section class="about" id="about">
+    <div class="wrap">
+      <img class="shield" src="logo.png" alt="AEROSAFE shield logo">
+      <div>
+        <div class="eyebrow">The idea</div>
+        <h2 class="section-title">Small design. Important purpose.</h2>
+        <p class="description">
+          Portable chargers have become everyday travel essentials.
+          However, lithium-ion batteries can pose fire risks if damaged
+          or improperly handled. AEROSAFE explores a more thoughtful way
+          to carry portable batteries, in your bag, on the road and in the air.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="design" style="background:#f1f0ec;">
-    <div class="eyebrow">THE DESIGN</div>
-    <h2 class="section-title">Designed around convenience.</h2>
+  <section class="design" id="design">
+    <div class="wrap">
+      <div class="eyebrow">The design</div>
+      <h2 class="section-title">Designed around convenience.</h2>
 
-    <div class="features">
-      <div class="feature">
-        <h3>01. MagSafe Fit</h3>
-        <p>A proposed sleeve designed specifically for compatible MagSafe portable chargers.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="num">01</div>
+          <h3>MagSafe Fit</h3>
+          <p>A sleeve shaped specifically for compatible MagSafe portable chargers, so it slides in snugly.</p>
+        </div>
+        <div class="feature">
+          <div class="num">02</div>
+          <h3>Compact Design</h3>
+          <p>Slim, lightweight and zippered, so it fits easily into everyday travel bags and carry-ons.</p>
+        </div>
+        <div class="feature">
+          <div class="num">03</div>
+          <h3>Safety-Focused</h3>
+          <p>Material selection and independent testing are planned to evaluate battery-related fire-risk mitigation.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="feature">
-        <h3>02. Compact Design</h3>
-        <p>A slim, lightweight concept intended to fit easily into everyday travel bags.</p>
-      </div>
-
-      <div class="feature">
-        <h3>03. Safety-Focused</h3>
-        <p>Material selection and independent testing are planned to evaluate battery-related fire-risk mitigation.</p>
+  <section class="buy" id="buy">
+    <div class="wrap">
+      <div class="card">
+        <div class="card-img">
+          <img src="aerosafe-product.jpg" alt="AEROSAFE sleeve">
+        </div>
+        <div class="card-body">
+          <div class="eyebrow">Get yours</div>
+          <h2>AEROSAFE Sleeve</h2>
+          <div class="price">$39.99</div>
+          <ul>
+            <li>Fits MagSafe portable chargers</li>
+            <li>Zip closure keeps your charger secure</li>
+            <li>Slim enough for any travel bag</li>
+          </ul>
+          <a class="button" href="#buy">Coming soon</a>
+          <p class="note">AEROSAFE is a product in development and is not yet available for purchase.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="mission" id="mission">
-    <div class="eyebrow">OUR MISSION</div>
-    <h2 class="section-title">Rethinking the way we carry power.</h2>
-    <p>
-      Our goal is to combine thoughtful design, travel convenience,
-      and a stronger focus on portable battery safety.
-      AEROSAFE is currently a developing product concept.
-    </p>
-    <a class="button" href="#top">BACK TO TOP</a>
+    <div class="wrap">
+      <div class="eyebrow">Our mission</div>
+      <h2 class="section-title">Rethinking the way we carry power.</h2>
+      <p>
+        Our goal is to combine thoughtful design, travel convenience,
+        and a stronger focus on portable battery safety.
+      </p>
+    </div>
   </section>
 
   <footer>
+    <img src="logo.png" alt="">
     © 2026 AEROSAFE. All rights reserved.
-    <br><br>
-    Product concept in development. Not yet available for purchase.
   </footer>
 
 </body>

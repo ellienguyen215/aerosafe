@@ -147,6 +147,24 @@
     }
     .about .shield { width: 200px; margin: 0 auto; }
 
+    .plane { background: var(--navy-deep); }
+    .plane h2 { color: #fff; }
+    .plane .eyebrow { background: rgba(255,255,255,0.1); color: #fff; }
+    .plane .description { color: #c9dde4; }
+    .plane .note { color: #8fb3c1; margin-top: 26px; }
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 44px;
+    }
+    .stat {
+      border-top: 3px solid var(--bolt); padding-top: 20px;
+    }
+    .stat-num {
+      font-family: "Fraunces", Georgia, serif; font-weight: 700;
+      font-size: 56px; line-height: 1; color: var(--bolt); margin-bottom: 10px;
+    }
+    .stat p { color: #e1ecf0; font-size: 15px; }
+
     .design { background: var(--sky-soft); }
     .features {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -203,7 +221,7 @@
     @media (max-width: 860px) {
       .hero .wrap, .about .wrap, .buy .card { grid-template-columns: 1fr; }
       .hero { padding-top: 50px; }
-      .features { grid-template-columns: 1fr; }
+      .features, .stats { grid-template-columns: 1fr; }
       .about .shield { width: 140px; }
       .buy .card-body { padding: 32px; }
       .nav-links a:not(.nav-buy) { display: none; }
@@ -265,6 +283,37 @@
           to carry portable batteries, in your bag, on the road and in the air.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="plane" id="planes">
+    <div class="wrap">
+      <div class="eyebrow">Why it matters in the air</div>
+      <h2 class="section-title">A small spark shouldn't become a cabin fire.</h2>
+      <p class="description">
+        When a damaged lithium-ion battery overheats at 35,000 feet, the danger isn't
+        just the charger. It's the bag, the seat and the cabin around it. AEROSAFE is
+        designed to keep an overheating charger inside its sleeve, helping contain
+        the heat so a single battery problem is less likely to spread into a larger
+        fire while the crew responds.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">93</div>
+          <p>battery incidents with smoke, fire or extreme heat on aircraft in 2025, verified by the FAA</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">39%</div>
+          <p>of lithium battery incidents on planes since 2006 involved portable chargers, the #1 source</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">176</div>
+          <p>people evacuated when a power bank fire destroyed an Air Busan jet in January 2025</p>
+        </div>
+      </div>
+      <p class="note">Sources: FAA lithium battery incident data; WTW aviation risk analysis (2026).
+        AEROSAFE's fire-containment performance is still being tested and is not yet certified.</p>
     </div>
   </section>
 

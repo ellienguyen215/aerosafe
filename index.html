@@ -204,6 +204,17 @@
     .buy li::before {
       content: "⚡"; position: absolute; left: 0; top: 9px; font-size: 14px;
     }
+    .stock {
+      display: inline-block; vertical-align: middle;
+      font-family: "Inter", sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #b3261e; background: #fde8e6; border: 1px solid #f5c2bd;
+      padding: 5px 10px; border-radius: 999px; margin-left: 8px;
+    }
+    .button.sold-out {
+      background: #d9dfe2; color: #6b7a81; box-shadow: none; cursor: not-allowed;
+    }
+    .button.sold-out:hover { transform: none; }
     .note { font-size: 12px; color: var(--muted); margin-top: 18px; }
 
     /* MISSION */
@@ -258,8 +269,8 @@
           safety in mind.
         </p>
         <div class="price-row">
-          <div class="price">$39.99<small>One sleeve · fits MagSafe chargers</small></div>
-          <a class="button" href="#buy">Get AEROSAFE</a>
+          <div class="price">$39.99 <span class="stock">Out of stock</span><small>One sleeve · fits MagSafe chargers</small></div>
+          <a class="button" href="#buy">See details</a>
         </div>
       </div>
 
@@ -351,14 +362,14 @@
         <div class="card-body">
           <div class="eyebrow">Get yours</div>
           <h2>AEROSAFE Sleeve</h2>
-          <div class="price">$39.99</div>
+          <div class="price">$39.99 <span class="stock">Out of stock</span></div>
           <ul>
             <li>Fits MagSafe portable chargers</li>
             <li>Zip closure keeps your charger secure</li>
             <li>Slim enough for any travel bag</li>
           </ul>
-          <a class="button" href="#buy">Coming soon</a>
-          <p class="note">AEROSAFE is a product in development and is not yet available for purchase.</p>
+          <span class="button sold-out" aria-disabled="true">Sold out</span>
+          <p class="note">AEROSAFE is currently out of stock. We're working on restocking soon, so check back!</p>
         </div>
       </div>
     </div>

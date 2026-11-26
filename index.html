@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEROSAFE | Travel Smarter. Carry Safer.</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafaf8;
+      color: #202124;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 8%;
+      background: white;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #ed873e;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 620px;
+      padding: 90px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background: #f1f0ec;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      color: #e47c35;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 27px;
+      background: #ed873e;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .hero img {
+      width: 45%;
+      max-width: 500px;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    section {
+      padding: 85px 10%;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      max-width: 700px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+    }
+
+    .feature p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .mission {
+      background: #202124;
+      color: white;
+      text-align: center;
+    }
+
+    .mission p {
+      color: #ccc;
+      max-width: 650px;
+      margin: 20px auto;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+    }
+
+    @media (max-width: 750px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero img {
+        width: 100%;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">AERO<span>SAFE</span></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#design">Design</a>
+      <a href="#mission">Our Mission</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="eyebrow">A NEW APPROACH TO BATTERY STORAGE</div>
+      <h1>Travel smarter. Carry safer.</h1>
+      <p>
+        Introducing AEROSAFE: a proposed compact protective sleeve
+        designed for MagSafe portable chargers, with travel convenience
+        and battery safety in mind.
+      </p>
+      <a class="button" href="#about">DISCOVER AEROSAFE</a>
+    </div>
+
+    <!-- Add your product concept image to the repository
+         and name it aerosafe-concept.png -->
+    <img src="aerosafe-concept.png" alt="AEROSAFE product concept">
+  </div>
+
+  <section id="about">
+    <div class="eyebrow">THE IDEA</div>
+    <h2 class="section-title">Small design. Important purpose.</h2>
+    <p class="description">
+      Portable chargers have become everyday travel essentials.
+      However, lithium-ion batteries can pose fire risks if damaged
+      or improperly handled. AEROSAFE is being developed to explore
+      a more thoughtful way to carry portable batteries.
+    </p>
+  </section>
+
+  <section id="design" style="background:#f1f0ec;">
+    <div class="eyebrow">THE DESIGN</div>
+    <h2 class="section-title">Designed around convenience.</h2>
+
+    <div class="features">
+      <div class="feature">
+        <h3>01. MagSafe Fit</h3>
+        <p>A proposed sleeve designed specifically for compatible MagSafe portable chargers.</p>
+      </div>
+
+      <div class="feature">
+        <h3>02. Compact Design</h3>
+        <p>A slim, lightweight concept intended to fit easily into everyday travel bags.</p>
+      </div>
+
+      <div class="feature">
+        <h3>03. Safety-Focused</h3>
+        <p>Material selection and independent testing are planned to evaluate battery-related fire-risk mitigation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="eyebrow">OUR MISSION</div>
+    <h2 class="section-title">Rethinking the way we carry power.</h2>
+    <p>
+      Our goal is to combine thoughtful design, travel convenience,
+      and a stronger focus on portable battery safety.
+      AEROSAFE is currently a developing product concept.
+    </p>
+    <a class="button" href="#top">BACK TO TOP</a>
+  </section>
+
+  <footer>
+    © 2026 AEROSAFE. All rights reserved.
+    <br><br>
+    Product concept in development. Not yet available for purchase.
+  </footer>
+
+</body>
+</html>
